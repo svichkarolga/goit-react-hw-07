@@ -4,14 +4,14 @@ import SearchBox from "./components/SearchBox/SearchBox";
 import ContactForm from "./components/ContactForm/ContactForm";
 import { useEffect } from "react";
 import { fetchContacts } from "./redux/contactsOps";
-import { getError, getIsLoading } from "./redux/selectors";
+import { selectLoading, selectError } from "./redux/contactsSlice";
 
 import "./App.css";
 
 function App() {
   const dispatch = useDispatch();
-  const isLoading = useSelector(getIsLoading);
-  const error = useSelector(getError);
+  const isLoading = useSelector(selectLoading);
+  const error = useSelector(selectError);
   useEffect(() => {
     dispatch(fetchContacts());
   }, [dispatch]);

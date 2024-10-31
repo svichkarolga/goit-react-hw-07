@@ -1,4 +1,3 @@
-// import { nanoid } from "nanoid";
 import React from "react";
 import { Formik, Form, Field } from "formik";
 import styles from "./ContactForm.module.css";
@@ -8,18 +7,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { addContact } from "../../redux/contactsOps.js";
 
 const ContactForm = () => {
-  const contacts = useSelector((state) => state.contacts.value);
   const dispatch = useDispatch();
 
-  // const handleSubmit = (values, actions) => {
-  //   const newContact = {
-  //     name: values.name,
-  //     number: values.number,
-  //     id: nanoid(),
-  //   };
-  //   actions.resetForm();
-  //   dispatch(addContact(newContact));
-  // };
   const handleSubmit = (values, actions) => {
     event.preventDefault();
     const newContact = {
